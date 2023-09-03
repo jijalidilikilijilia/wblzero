@@ -1,0 +1,17 @@
+nats:
+  url: "nats://localhost:4222"
+  cluster_id: "my_cluster"
+  client_id: "my_app"
+  subject : "wbl0"
+  queueGroup : "wbl0"
+  
+db:
+  dsn: "host=localhost user=postgres password=1233 dbname=wblzero_db port=5432 sslmode=disable"
+
+cache:
+  addr: "localhost:6379"
+  password: ""
+  db: 0
+
+server:
+  address: ":8000"

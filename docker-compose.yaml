@@ -1,0 +1,27 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: wblzero_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1233
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  nats:
+    image: nats-streaming:latest
+    container_name: nats
+    ports:
+      - "4222:4222"
+    environment:
+      - STAN_CLUSTER_ID=my_cluster
+    command: ["--cluster_id=my_cluster"]
+
